@@ -1230,9 +1230,8 @@ public class EmulatorView extends View implements GestureDetector.OnGestureListe
     private boolean onTouchEventWhileSelectingText(MotionEvent ev) {
         int action = ev.getAction();
         int cx = (int)(ev.getX() / mCharacterWidth);
-        int cy = Math.max(0,
-                (int)((ev.getY() + SELECT_TEXT_OFFSET_Y * mScaledDensity)
-                        / mCharacterHeight) + mTopRow);
+        int cy = (int)((ev.getY() + SELECT_TEXT_OFFSET_Y * mScaledDensity)
+                        / mCharacterHeight) + mTopRow;
         switch (action) {
         case MotionEvent.ACTION_DOWN:
             mSelXAnchor = cx;
